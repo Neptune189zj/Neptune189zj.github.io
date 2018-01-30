@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="爱街舞！爱摄影！爱编程！">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="张健">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="用hexo搭建个人博客"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="爱街舞！爱摄影！爱编程！" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Neptune"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>用hexo搭建个人博客 - Neptune</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Neptune">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Neptune">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="主页">
+                    主页
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="博文列表">
+                    博文列表
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="关于">
+                    关于
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="联系我">
+                    联系我
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">用hexo搭建个人博客</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2018-01-13</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <h2 id="如何用Hexo搭建个人博客"><a href="#如何用Hexo搭建个人博客" class="headerlink" title="如何用Hexo搭建个人博客"></a>如何用Hexo搭建个人博客</h2><blockquote>
+<p>从昨天晚上到现在，经过查询各种博客以及官方文档，GG N多次以后，终于把hexo博客搭建好了。这篇文章主要介绍搭建步骤以及修改主题的各种相关事项。</p>
+</blockquote>
+<h4 id="1-安装Node"><a href="#1-安装Node" class="headerlink" title="1.安装Node"></a>1.安装Node</h4><p>在Node .js官网下载对应的版本，这是必须要安装的，用来生成静态页面</p>
+<h4 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h4><p>用来把本地的内容上传到github上，使人们可以通过网络访问你的博客</p>
+<h4 id="3-申请GitHub账号"><a href="#3-申请GitHub账号" class="headerlink" title="3.申请GitHub账号"></a>3.申请GitHub账号</h4><p>申请完之后用来做访问你博客的域名</p>
+<h4 id="4-安装与配置Hexo"><a href="#4-安装与配置Hexo" class="headerlink" title="4.安装与配置Hexo"></a>4.安装与配置Hexo</h4><p>完成上述步骤之后，打开终端执行如下命令：</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+<p>配置些杂七杂八的东西，避免出错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+<h4 id="5-创建文件夹"><a href="#5-创建文件夹" class="headerlink" title="5.创建文件夹"></a>5.创建文件夹</h4><p>用来存放你博客里的各项文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir Blog</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Blog</span><br></pre></td></tr></table></figure>
+<h4 id="6-初始化"><a href="#6-初始化" class="headerlink" title="6.初始化"></a>6.初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h4 id="7-生成页面"><a href="#7-生成页面" class="headerlink" title="7.生成页面"></a>7.生成页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero g</span><br></pre></td></tr></table></figure>
+<h4 id="8-在本地启动，进行预览"><a href="#8-在本地启动，进行预览" class="headerlink" title="8.在本地启动，进行预览"></a>8.在本地启动，进行预览</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero server</span><br></pre></td></tr></table></figure>
+<p>打开浏览器输入（<a href="http://localhost:4000）" target="_blank" rel="noopener">http://localhost:4000）</a></p>
+<h4 id="9-建立respository"><a href="#9-建立respository" class="headerlink" title="9.建立respository"></a>9.建立respository</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打开你的github点击左上角进到主页-&gt;Start a project-&gt;在Responsitory name里输入[your_user_name.github.io]</span><br></pre></td></tr></table></figure>
+<h4 id="10-配置-config-yml"><a href="#10-配置-config-yml" class="headerlink" title="10.配置_config.yml"></a>10.配置_config.yml</h4><p>在终端里操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure></p>
+<p>更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/“你的github用户名”/“你的github用户名”.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p> 执行如下命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<h4 id="11-将文件提交到github上"><a href="#11-将文件提交到github上" class="headerlink" title="11.将文件提交到github上"></a>11.将文件提交到github上</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>浏览器输入(<a href="http://你的github用户名.github.io/)查看效果" target="_blank" rel="noopener">http://你的github用户名.github.io/)查看效果</a></p>
+<h4 id="12-更改主题"><a href="#12-更改主题" class="headerlink" title="12.更改主题"></a>12.更改主题</h4><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">点击这里</a><br>这里有很多主题供我们选择，点击每个主题的标题都会出现安装步骤：<br>这里以改成Anodyne为例子：</p>
+<p>1.下载主题到本地</p>
+<p>打开终端执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/klugjo/hexo-theme-anodyne themes/anodyne</span><br></pre></td></tr></table></figure>
+<p>2.打开_config.yml</p>
+<p>更改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">## Themes: http://hexo.io/themes/</span><br><span class="line">theme: anodyne</span><br></pre></td></tr></table></figure>
+<p>3.重新部署更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p><em>以上步骤做完，就完成了hexo的搭建啦！</em></p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://upload-images.jianshu.io/upload_images/9953616-dafbf0bba0eef07f.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="张健">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            一个爱生活，多才多艺的新晋前端程序员.<br>博文主要分享生活，分享摄影技巧，以及IT技术等<br>喜欢我就Say Hi吧，我的<a href='mailto:960840753@qq.com'>E-mail</a>
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2018/01/20/Bootstrap-4-发布啦！/">Bootstrap 4 发布啦！</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/13/用hexo搭建个人博客/">用hexo搭建个人博客</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/13/StartReact/">单反相机参数介绍</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/13/单反相机参数介绍/">单反相机参数介绍</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Neptune</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
