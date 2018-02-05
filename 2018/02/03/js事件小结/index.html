@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="用hexo搭建个人博客"/>
+        <meta property="og:title" content="Js事件小结"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>用hexo搭建个人博客 - Neptune</title>
+    <title>Js事件小结 - Neptune</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -112,8 +112,8 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">用hexo搭建个人博客</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2018-01-13</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Js事件小结</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2018-02-03</p>
         </div>
     </div>
 
@@ -133,38 +133,94 @@
                     
 
                     <!-- Main Post Content -->
-                    <h2 id="如何用Hexo搭建个人博客"><a href="#如何用Hexo搭建个人博客" class="headerlink" title="如何用Hexo搭建个人博客"></a>如何用Hexo搭建个人博客</h2><blockquote>
-<p>从昨天晚上到现在，经过查询各种博客以及官方文档，GG N多次以后，终于把hexo博客搭建好了。这篇文章主要介绍搭建步骤以及修改主题的各种相关事项。</p>
-</blockquote>
-<h4 id="1-安装Node"><a href="#1-安装Node" class="headerlink" title="1.安装Node"></a>1.安装Node</h4><p>在Node .js官网下载对应的版本，这是必须要安装的，用来生成静态页面</p>
-<h4 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h4><p>用来把本地的内容上传到github上，使人们可以通过网络访问你的博客</p>
-<h4 id="3-申请GitHub账号"><a href="#3-申请GitHub账号" class="headerlink" title="3.申请GitHub账号"></a>3.申请GitHub账号</h4><p>申请完之后用来做访问你博客的域名</p>
-<h4 id="4-安装与配置Hexo"><a href="#4-安装与配置Hexo" class="headerlink" title="4.安装与配置Hexo"></a>4.安装与配置Hexo</h4><p>完成上述步骤之后，打开终端执行如下命令：</p>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
-<p>配置些杂七杂八的东西，避免出错：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-ejs --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
-<h4 id="5-创建文件夹"><a href="#5-创建文件夹" class="headerlink" title="5.创建文件夹"></a>5.创建文件夹</h4><p>用来存放你博客里的各项文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir Blog</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd Blog</span><br></pre></td></tr></table></figure>
-<h4 id="6-初始化"><a href="#6-初始化" class="headerlink" title="6.初始化"></a>6.初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-<h4 id="7-生成页面"><a href="#7-生成页面" class="headerlink" title="7.生成页面"></a>7.生成页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero g</span><br></pre></td></tr></table></figure>
-<h4 id="8-在本地启动，进行预览"><a href="#8-在本地启动，进行预览" class="headerlink" title="8.在本地启动，进行预览"></a>8.在本地启动，进行预览</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hero server</span><br></pre></td></tr></table></figure>
-<p>打开浏览器输入（<a href="http://localhost:4000）" target="_blank" rel="noopener">http://localhost:4000）</a></p>
-<h4 id="9-建立respository"><a href="#9-建立respository" class="headerlink" title="9.建立respository"></a>9.建立respository</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">打开你的github点击左上角进到主页-&gt;Start a project-&gt;在Responsitory name里输入[your_user_name.github.io]</span><br></pre></td></tr></table></figure>
-<h4 id="10-配置-config-yml"><a href="#10-配置-config-yml" class="headerlink" title="10.配置_config.yml"></a>10.配置_config.yml</h4><p>在终端里操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim _config.yml</span><br></pre></td></tr></table></figure></p>
-<p>更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/“你的github用户名”/“你的github用户名”.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p> 执行如下命令：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<h4 id="11-将文件提交到github上"><a href="#11-将文件提交到github上" class="headerlink" title="11.将文件提交到github上"></a>11.将文件提交到github上</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>浏览器输入(<a href="http://你的github用户名.github.io/)查看效果" target="_blank" rel="noopener">http://你的github用户名.github.io/)查看效果</a></p>
-<h4 id="12-更改主题"><a href="#12-更改主题" class="headerlink" title="12.更改主题"></a>12.更改主题</h4><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">点击这里</a><br>这里有很多主题供我们选择，点击每个主题的标题都会出现安装步骤：<br>这里以改成Anodyne为例子：</p>
-<p>1.下载主题到本地</p>
-<p>打开终端执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/klugjo/hexo-theme-anodyne themes/anodyne</span><br></pre></td></tr></table></figure>
-<p>2.打开_config.yml</p>
-<p>更改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">## Themes: http://hexo.io/themes/</span><br><span class="line">theme: anodyne</span><br></pre></td></tr></table></figure>
-<p>3.重新部署更新<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p><em>以上步骤做完，就完成了hexo的搭建啦！</em></p>
+                    <h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onblur</td>
+<td>元素失去焦点</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>元素获得焦点</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>用户改变域的内容</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>鼠标点击某个对象</td>
+</tr>
+<tr>
+<td>ondblclick</td>
+<td>鼠标双击某个对象</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>某个键盘的键被按下</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>某个键盘的键被按下或按住</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>某个键盘的键被松开</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>某个页面或图像被完成加载</td>
+</tr>
+<tr>
+<td>onmousedown</td>
+<td>某个鼠标按键被按下</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>鼠标被移动</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标从某元素移开</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标被移到某元素之上</td>
+</tr>
+<tr>
+<td>onmouseup</td>
+<td>某个鼠标按键被松开</td>
+</tr>
+<tr>
+<td>onreset</td>
+<td>重置按钮被点击</td>
+</tr>
+<tr>
+<td>onresize</td>
+<td>窗口或框架被调整尺寸</td>
+</tr>
+<tr>
+<td>onselect</td>
+<td>文本被选定</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>提交按钮被点击</td>
+</tr>
+<tr>
+<td>onunload</td>
+<td>用户退出页面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>什么是事件冒泡，就是最深dom节点触发事件，然后逐级向最外层触发事件。打个比方一棵dom tree：<figure class="highlight plain"><figcaption><span>ul 上的事件也会触发，接着 div 上的事件也会在 ul 事件触发之后执行。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 取消事件冒泡的方法</span><br><span class="line">使用event.stopPropagation()方法阻止事件冒泡</span><br></pre></td></tr></table></figure></p>
+<p>$(function(){<br>    $(“li”).click(function(event){<br>        alert(‘我是li’);<br>        event.stopPropagation(); //阻止事件冒泡<br>    });<br>    $(“div”).click(function(event){<br>        alert(“我是div”);<br>    });<br>    $(“a”).click(function(event){<br>        alert(“我是a”);<br>    });<br>});<br>```</p>
 
                     
                     <!-- Tags Bottom -->
