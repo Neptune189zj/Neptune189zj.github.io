@@ -219,9 +219,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>什么是事件冒泡，就是最深dom节点触发事件，然后逐级向最外层触发事件。打个比方一棵dom tree：<figure class="highlight plain"><figcaption><span>```每级都有事件绑定，然后我们触发li的事件，这时 ul 上的事件也会触发，接着 div 上的事件也会在 ul 事件触发之后执行。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 取消事件冒泡的方法</span><br><span class="line">使用event.stopPropagation()方法阻止事件冒泡</span><br></pre></td></tr></table></figure></p>
-<p>$(function(){<br>    $(“li”).click(function(event){<br>        alert(‘我是li’);<br>        event.stopPropagation(); //阻止事件冒泡<br>    });<br>    $(“div”).click(function(event){<br>        alert(“我是div”);<br>    });<br>    $(“a”).click(function(event){<br>        alert(“我是a”);<br>    });<br>});<br>```</p>
-
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>什么是事件冒泡，就是最深dom节点触发事件，然后逐级向最外层触发事件。打个比方一棵dom tree：“ li&lt;ul&lt;div ”每级都有事件绑定，然后我们触发li的事件，这时 ul 上的事件也会触发，接着 div 上的事件也会在 ul 事件触发之后执行。</p>
+<ul>
+<li>取消事件冒泡的方法<br>使用event.stopPropagation()方法阻止事件冒泡</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">    $(&quot;li&quot;).click(function(event)&#123;</span><br><span class="line">        alert(&apos;我是li&apos;);</span><br><span class="line">        event.stopPropagation(); //阻止事件冒泡</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;div&quot;).click(function(event)&#123;</span><br><span class="line">        alert(&quot;我是div&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    $(&quot;a&quot;).click(function(event)&#123;</span><br><span class="line">        alert(&quot;我是a&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
                     
                     <!-- Tags Bottom -->
                     
