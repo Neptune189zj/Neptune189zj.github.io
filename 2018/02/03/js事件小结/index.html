@@ -219,7 +219,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>什么是事件冒泡，就是最深dom节点触发事件，然后逐级向最外层触发事件。打个比方一棵dom tree：<figure class="highlight plain"><figcaption><span>ul 上的事件也会触发，接着 div 上的事件也会在 ul 事件触发之后执行。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 取消事件冒泡的方法</span><br><span class="line">使用event.stopPropagation()方法阻止事件冒泡</span><br></pre></td></tr></table></figure></p>
+<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>什么是事件冒泡，就是最深dom节点触发事件，然后逐级向最外层触发事件。打个比方一棵dom tree：<figure class="highlight plain"><figcaption><span>```每级都有事件绑定，然后我们触发li的事件，这时 ul 上的事件也会触发，接着 div 上的事件也会在 ul 事件触发之后执行。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 取消事件冒泡的方法</span><br><span class="line">使用event.stopPropagation()方法阻止事件冒泡</span><br></pre></td></tr></table></figure></p>
 <p>$(function(){<br>    $(“li”).click(function(event){<br>        alert(‘我是li’);<br>        event.stopPropagation(); //阻止事件冒泡<br>    });<br>    $(“div”).click(function(event){<br>        alert(“我是div”);<br>    });<br>    $(“a”).click(function(event){<br>        alert(“我是a”);<br>    });<br>});<br>```</p>
 
                     
