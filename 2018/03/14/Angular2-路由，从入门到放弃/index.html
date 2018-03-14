@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="爱街舞！爱摄影！爱编程！">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="张健">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Angular2 路由，从入门到放弃"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="爱街舞！爱摄影！爱编程！" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Neptune"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Angular2 路由，从入门到放弃 - Neptune</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Neptune">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Neptune">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="主页">
+                    主页
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="博文列表">
+                    博文列表
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="关于">
+                    关于
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="联系我">
+                    联系我
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Angular2 路由，从入门到放弃</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2018-03-14</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <h2 id="Angular-路由跳转"><a href="#Angular-路由跳转" class="headerlink" title="Angular 路由跳转"></a>Angular 路由跳转</h2><p>最近入职以后公司接了一个Angular2项目，需要用到路由进行页面跳转，但是官方文档给出的样例是类似于导航一样，并不会直接跳转到一个新的页面，在找了很多个教程以后终于研究出来了解决方案。</p>
+<h4 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h4><p>  在Angular中，路由的作用就是建立URL路径和组件（页面，因为页面就是由组件构成）之间的对应关系，根据不同的URL路径匹配出相应的组件并渲染。</p>
+<h4 id="基本配置步骤"><a href="#基本配置步骤" class="headerlink" title="基本配置步骤"></a>基本配置步骤</h4><ul>
+<li><h5 id="定义路由配置"><a href="#定义路由配置" class="headerlink" title="定义路由配置"></a>定义路由配置</h5></li>
+<li><h5 id="创建根路由模块"><a href="#创建根路由模块" class="headerlink" title="创建根路由模块"></a>创建根路由模块</h5></li>
+<li><h5 id="添加路由插座"><a href="#添加路由插座" class="headerlink" title="添加路由插座"></a>添加路由插座</h5></li>
+</ul>
+<hr>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>1.新建一个 Angular 项目<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ng new angular-router</span><br></pre></td></tr></table></figure></p>
+<p>2.进入到 angular-router 文件夹内<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd angular-router</span><br></pre></td></tr></table></figure></p>
+<p>3.新建两个组件 login ， index<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ng g c login</span><br><span class="line"></span><br><span class="line">ng g c index</span><br></pre></td></tr></table></figure></p>
+<p>4.在 app 文件夹下新建 <code>app.routes.ts</code>,设置启动的第一个路由，定义要在根目录下启动所有自路由。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">export const AppRoutes=[</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;&apos;,</span><br><span class="line">        redirectTo: &apos;index&apos;,  //项目启动的第一个路由为index</span><br><span class="line">        pathMatch: &apos;full&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;  </span><br><span class="line">        path: &apos;index&apos;,</span><br><span class="line">        loadChildren: &apos;./index/index.module#IndexModule&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;login&apos;,</span><br><span class="line">        loadChildren: &apos;./login/login.module#LoginModule&apos;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>修改 <code>app.module.ts</code> 设置根路由<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import &#123; BrowserModule &#125; from &apos;@angular/platform-browser&apos;;</span><br><span class="line">import &#123; NgModule &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">import &#123; FormsModule &#125; from &apos;@angular/forms&apos;;</span><br><span class="line">import &#123; AppComponent &#125; from &apos;./app.component&apos;;</span><br><span class="line">import &#123; LoginComponent &#125; from &apos;./login/login.component&apos;;</span><br><span class="line">import &#123; IndexComponent &#125; from &apos;./index/index.component&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import &#123; RouterModule &#125; from &apos;@angular/router&apos;;  //导入路由</span><br><span class="line">import &#123; AppRoutes &#125; from &apos;./app.routes&apos;; </span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    AppComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    RouterModule,</span><br><span class="line">    FormsModule</span><br><span class="line">     //设置主要路由</span><br><span class="line">    RouterModule.forRoot(AppRoutes)</span><br><span class="line">  ],</span><br><span class="line">  providers: [],</span><br><span class="line">  bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>6.在 <code>app.component.html</code> 中定义插座。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-outlet&gt;&lt;/router-outlet&gt;</span><br></pre></td></tr></table></figure></p>
+<p>7.在 app/index 文件夹下新建 <code>index.routes.ts</code> 文件，定义子路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; IndexComponent &#125; from &apos;./index.component&apos;;</span><br><span class="line"></span><br><span class="line">export const IndexRoutes= [</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;&apos;,</span><br><span class="line">        component: IndexComponent</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>8.在 app/index 文件夹下新建 <code>index.module.ts</code> 文件，设置子路由。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; CommonModule &#125; from &apos;@angular/common&apos;;</span><br><span class="line">import &#123;RouterModule&#125; from &apos;@angular/router&apos;;</span><br><span class="line">import &#123;IndexRoutes&#125; from &apos;./index.routes&apos;;</span><br><span class="line">import &#123; IndexComponent &#125; from &apos;./index.component&apos;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule,</span><br><span class="line">    //设置IndexRoutes为子路由</span><br><span class="line">    RouterModule.forChild(&lt;any&gt;IndexRoutes)    </span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    IndexComponent</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line">export class IndexModule &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>9.设置跳转的下一个子路由 login ，在 <code>index.component.ts</code> 文件中设置在 <code>entry()</code> 触发时跳转路由。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; Router&#125; from &apos;@angular/router&apos;; //导入router服务</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;app-index&apos;,</span><br><span class="line">  templateUrl: &apos;./index.component.html&apos;,</span><br><span class="line">  styleUrls: [&apos;./index.component.css&apos;]</span><br><span class="line">&#125;)</span><br><span class="line">export class IndexComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  constructor(private router: Router) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  entry(): void &#123;</span><br><span class="line">  //跳转到login路由（绝对路径）</span><br><span class="line">    this.router.navigateByUrl(&quot;login&quot;) </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 <code>index.component.html</code> 里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;我是index页面&lt;/h1&gt;</span><br><span class="line">&lt;button (click)=&quot;entry()&quot;&gt;点击进入&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<p>10.在 app/login 里新建 <code>login.routes.ts</code>，定义第二个子路由。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; LoginComponent &#125; from &apos;./login.component&apos;;</span><br><span class="line"></span><br><span class="line">export const LoginRoutes= [</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;&apos;,</span><br><span class="line">        component: LoginComponent</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>11.在 app/login 里新建 <code>login.module.ts</code>，设置LoginRoutes为子路由。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; CommonModule &#125; from &apos;@angular/common&apos;;</span><br><span class="line">import &#123;RouterModule&#125; from &apos;@angular/router&apos;;</span><br><span class="line">import&#123;FormsModule&#125;from &apos;@angular/forms&apos;;</span><br><span class="line"></span><br><span class="line">import &#123; LoginRoutes &#125; from &apos;./login.routes&apos;;</span><br><span class="line">import &#123; LoginComponent &#125; from &apos;./login.component&apos;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule,</span><br><span class="line">    //必须导入FormsMoudule，因为此页面用到了数据双向绑定</span><br><span class="line">    FormsModule,</span><br><span class="line">    //将LoginRoutes设置为子路由</span><br><span class="line">    RouterModule.forChild(&lt;any&gt;LoginRoutes)   </span><br><span class="line">  ],</span><br><span class="line">  declarations: [</span><br><span class="line">    LoginComponent</span><br><span class="line">  ]  </span><br><span class="line">&#125;)</span><br><span class="line">export class LoginModule &#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<p>12.设置第二个路由 <code>login.component.ts</code> 文件的内容。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> import &#123; Component, OnInit &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;app-login&apos;,</span><br><span class="line">  templateUrl: &apos;./login.component.html&apos;,</span><br><span class="line">  styleUrls: [&apos;./login.component.css&apos;]</span><br><span class="line">&#125;)</span><br><span class="line">export class LoginComponent implements OnInit &#123;</span><br><span class="line"></span><br><span class="line">  public username:string;</span><br><span class="line">  public password:string;</span><br><span class="line"></span><br><span class="line">  entry() &#123;</span><br><span class="line">    //必须写this</span><br><span class="line">    let username = this.username;</span><br><span class="line">    let password = this.password;</span><br><span class="line">    if (username == &quot;1&quot; &amp;&amp; password == &quot;1&quot;)&#123;</span><br><span class="line">      alert(&quot;登录成功&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">      alert(&quot;登录失败&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>login.component.html</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">div class=&quot;login&quot;&gt;</span><br><span class="line">  &lt;h1&gt;我是login页面&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;label for=&quot;&quot;&gt;用户名：&lt;/label&gt;</span><br><span class="line">  &lt;input  name =&quot;username&quot; type=&quot;text&quot; [(ngModel)]=&quot;username&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;label for=&quot;&quot;&gt;密  码：&lt;/label&gt;</span><br><span class="line">  &lt;input  name =&quot;password&quot; type=&quot;text&quot; [(ngModel)]=&quot;password&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button (click)=&quot;doLogin()&quot;&gt;登录&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>13.运行 <code>ng serve --open</code> 查看。</p>
+<hr>
+<h4 id="借鉴参考资料的思路："><a href="#借鉴参考资料的思路：" class="headerlink" title="借鉴参考资料的思路："></a>借鉴参考资料的思路：</h4><p>   在app.module中设置了根路由AppRoutes，于是开始执行app.module中，而app.module设置了跳转的第一个子路由index，在此文件中有该路由，于是去设置的路径下去找IndexModule，于是执行到了index.module，去index.routes找该路由，该路由被渲染的组件为IndexComponent，于是又执行到了index.component文件中，而此文件中又设置了一个绝对路径下的路由login，于是又执行到app.routes下查找有无该路由，有则跳转到指定目录下的login.module文件下找LoginModule，在login.module定义了该路由LoginRoutes，于是去login.routes找到了该路由，该路由被渲染的组件为LoginComponent，于是去login.component文件中找到该组件，执行方法，结束！之所以回去app.routes下查找路由,是根据它设置的找路径找的this.router.navigateByUrl(“login”)]</p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://upload-images.jianshu.io/upload_images/9953616-dafbf0bba0eef07f.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="张健">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            一个爱生活，多才多艺的新晋前端程序员.<br>博文主要分享生活，分享摄影技巧，以及IT技术等<br>喜欢我就Say Hi吧，我的<a href='mailto:960840753@qq.com'>E-mail</a>
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2018/03/14/Angular2-路由，从入门到放弃/">Angular2 路由，从入门到放弃</a>
+        </p>
+    
+        <p>
+            <a href="/2018/02/03/js事件小结/">Js事件小结</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/30/StartReact-1/">StartReact</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/20/Bootstrap-4-发布啦！/">Bootstrap 4 发布啦！</a>
+        </p>
+    
+        <p>
+            <a href="/2018/01/13/用hexo搭建个人博客/">用hexo搭建个人博客</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com/?lang=en" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://dribbble.com/" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/klugjo/hexo-theme-anodyne" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://plus.google.com/" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design & Hexo <a class="link dim white" href="http://www.codeblocq.com/">Neptune</a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
